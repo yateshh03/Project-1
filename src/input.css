@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* ✅ Theme Variables */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --primary: #4f46e5;
+  --box-color: #ffffff;
+  --shadow-inset: inset 0 0 30px rgba(0, 0, 0, 0.2);
+  --text-gradient: linear-gradient(to bottom right, #000000, #909092);
+}
+
+.dark {
+  --bg: #000;
+  --text: #ffffff;
+  --primary: #818cf8;
+  --box-color: #007595;
+  --shadow-inset: inset 0 0 30px rgba(255, 255, 255, 0.3);
+  --text-gradient: linear-gradient(to bottom right, #ffffff, #8e9197);
+}
+
+*{
+  transition: all 0.3s ease;
+
+}
+
+.linear-text{
+    background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-img {
+  border-bottom-left-radius: 240px;
+}
+
+.card-btn:hover {
+  background-color: rgb(32, 82, 158);
+  color: white;
+  transition: all linear 0.5s;
+  transform: rotate(-4deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(161, 161, 161, 0.4);
+}
+
+.icon:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background-color: white;
+  border-radius: 20px;
+  pointer-events: all;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* JavaScript  */
+
+.accordion-item-header.active .icon:before {
+  transform: rotate(180deg);
+}
+
+.accordion-item-header.active .icon:after {
+  transform: rotate(90deg);
+}
