@@ -1,67 +1,78 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <!-- MAIN -->
     <div
-      class="min-h-screen w-full relative z-10
-
-           bg-(--bg) text-(--text)
-
-            bg-[linear-gradient(to_left,rgba(88,28,135,0.2),transparent)]
-            bg-[linear-gradient(to_left,rgba(88,28,135,0.3),transparent)]"
+      class="min-h-screen w-full relative z-10 bg-(--bg) text-(--text) bg-[linear-gradient(to_left,rgba(88,28,135,0.2),transparent)] bg-[linear-gradient(to_left,rgba(88,28,135,0.3),transparent)]"
     >
-      <!-- <div class="bg-cyan-600 h-96 w-96 absolute  rounded-full blur-[190px] left-12 top-10 "></div>  -->
-
       <!-- NAVBAR -->
       <nav
-        class="flex items-center justify-between sticky top-0 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 2xl:px-40 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto py-2 sm:py-3 h-20 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/10 shadow-xl"
+        class="flex items-center justify-between sticky top-0 px-4 sm:px-6 md:px-10 lg:px-15 xl:px-20 2xl:px-25 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto py-2 sm:py-3 h-20 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/10 shadow-xl z-10"
       >
         <!-- Logo -->
+        <!-- Light Mode Logo -->
         <img
-          class="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 2xl:w-40"
+          id="lightLogo"
+          class="w-20 sm:w-24 md:w-28 lg:w-32 block xl:w-36 2xl:w-40"
+          src="./assets/lightLogo.png"
+        />
+
+        <!-- Dark Mode Logo -->
+        <img
+          id="darkLogo"
+          class="w-20 sm:w-24 md:w-28 hidden lg:w-32 xl:w-36 2xl:w-40"
           src="./148-1482773_white-logo-png-circle-transparent-png-removebg-preview.png"
         />
 
         <!-- Menu -->
         <div
           id="menu"
-          class="fixed lg:static top-0 right-0 h-screen lg:h-auto w-0 lg:w-auto overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-10  lg:bg-transparent backdrop-blur-lg lg:backdrop-blur-none transition-all duration-500 ease-in-out"
+          class="fixed lg:static top-0 -right-17 h-screen lg:h-auto w-0 lg:w-auto overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-8 text-[--text] bg-(--bg)/80 lg:bg-transparent backdrop-blur-2xl lg:backdrop-blur-none transition-all duration-500 ease-in-out"
         >
           <a
-            class="text-xl sm:text-2xl md:text-3xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
+            class="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
             >Home</a
           >
           <a
-            class="text-xl sm:text-2xl md:text-3xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
+            class="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
             >About</a
           >
           <a
-            class="text-xl sm:text-2xl md:text-3xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
+            class="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
             >Contact</a
           >
           <a
-            class="text-xl sm:text-2xl md:text-3xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
+            class="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-base xl:text-lg 2xl:text-xl px-4 py-2 rounded-xl hover:bg-cyan-600 transition"
             >Services</a
           >
         </div>
 
         <!-- Right -->
-        <div class="flex items-center gap-3 sm:gap-5">
+        <div class="flex items-center gap-6 sm:gap-10">
           <button
-            class="hidden sm:block border border-(--text) px-3 sm:px-4 md:px-5 lg:px-6 py-2 text-sm sm:text-base md:text-lg rounded-xl hover:bg-(--text) hover:text-(--bg) transition"
+            class="hidden font-medium sm:block border-2 border-(--text) px-3 sm:px-4 md:px-5 lg:px-6 py-2 text-sm sm:text-base md:text-lg rounded-xl hover:bg-(--text) hover:text-(--bg) transition"
           >
             Get Started
           </button>
 
-          <div class="toggleTheme border border-(--text) shadow-[inset_0_0_20px_rgba(255,255,255,0.6)]">Toggle</div>
-          <button id="menu-btn" class="lg:hidden text-2xl sm:text-3xl z-50">
+          <div class="toggleTheme">
+            <i
+              id="themeIcon"
+              class="text-4xl ri-sun-line text-[var(--text)]"
+            ></i>
+          </div>
+          <button id="menu-btn" class="lg:hidden text-4xl sm:text-3xl z-50">
             ☰
           </button>
         </div>
@@ -90,9 +101,7 @@
             apps and software. focused on coding and development.
           </p>
 
-          <div
-            class="flex flex-col sm:flex-row items-center lg:items-start gap-4"
-          >
+          <div class="flex flex-col sm:flex-row items-center gap-4">
             <button
               class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-6 sm:py-4 p sm:px-6 xl:px-8 rounded-xl transition w-full sm:w-auto"
             >
@@ -109,9 +118,13 @@
           class="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0"
         >
           <div
-            class="hero-img h-62.5 sm:h-75 md:h-87.5 lg:h-100 xl:h-112.5 2xl:h-125 w-[90%] sm:w-[75%] md:w-[65%] lg:w-[75%] xl:w-[60%] 2xl:w-[58%] bg-gray-200 rounded-3xl overflow-hidden"
+            class="hero-img h-75 sm:h-75 md:h-87.5 lg:h-100 xl:h-112.5 2xl:h-125 w-[70%] sm:w-[50%] md:w-[50%] lg:w-[75%] xl:w-[60%] 2xl:w-[58%] rounded-3xl overflow-hidden"
           >
-            <img src="" alt="" class="w-full h-full object-cover" />
+            <img
+              src="./assets/Hero-Image.avif"
+              alt=""
+              class="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </section>
@@ -124,33 +137,14 @@
         </h1>
 
         <div
-          class="flex items-center justify-between flex-wrap lg:flex-nowrap px-30 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-30 py-10 sm:py-8 md:py-10 xl:py-12 border-t border-b border-gray-400 w-full gap-6 xl:gap-10"
+          class="flex sm:items-center justify-between flex-wrap lg:flex-nowrap px-30 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-30 py-10 sm:py-8 md:py-10 xl:py-12 border-t border-b border-(--text) w-full gap-6 xl:gap-10"
         >
-          <img
-            class="w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 2xl:w-32"
-            src=""
-            alt="img"
-          />
-          <img
-            class="w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 2xl:w-32"
-            src=""
-            alt="img"
-          />
-          <img
-            class="w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 2xl:w-32"
-            src=""
-            alt="img"
-          />
-          <img
-            class="w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 2xl:w-32"
-            src=""
-            alt="img"
-          />
-          <img
-            class="w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 2xl:w-32"
-            src=""
-            alt="img"
-          />
+          <div class="w-20 font-medium text-(--text) text-3xl">11</div>
+
+          <div class="w-20 font-medium text-(--text) text-3xl">22</div>
+          <div class="w-20 font-medium text-(--text) text-3xl">33</div>
+          <div class="w-20 font-medium text-(--text) text-3xl">44</div>
+          <div class="w-20 font-medium text-(--text) text-3xl">55</div>
         </div>
       </div>
 
@@ -164,7 +158,7 @@
           class="h-full w-full lg:w-[40%] flex flex-col items-center lg:items-start text-center lg:text-left"
         >
           <h2
-            class="mt-10 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-medium leading-8 sm:leading-10 md:leading-11 2xl:leading-12 "
+            class="mt-10 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-medium leading-8 sm:leading-10 md:leading-11 2xl:leading-12"
           >
             Things I do for you that <br />
             simply make your <br />
@@ -191,7 +185,7 @@
         >
           <!-- CARD -->
           <div
-            class="card-btn w-full sm:w-[48%] lg:w-[45%]  bg-(--box-color) rounded-4xl flex flex-col gap-8 lg:gap-12 p-4 sm:p-5 py-5 sm:py-6"
+            class="card-btn w-full sm:w-[48%] lg:w-[45%] bg-(--box-color) rounded-4xl flex flex-col gap-8 lg:gap-12 p-4 sm:p-5 py-5 sm:py-6"
           >
             <h1 class="mt-2">Icon</h1>
             <div class="flex flex-col gap-4 sm:gap-5">
@@ -414,24 +408,22 @@
             <button
               class="border border-gray-700 shadow-(--shadow-inset) rounded-xl px-4 py-1 text-sm"
             >
+              <i class="ri-dashboard-line mr-2"></i>
               Display best SaaS products
             </button>
 
-           <h1
-  class="mt-3 font-medium faq-text
-         text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-16"
->
-  Frequently asked <br />
-  questions
-</h1>
+            <h1
+              class="mt-3 font-medium faq-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-8 md:leading-12 lg:leading-16"
+            >
+              Frequently asked <br />
+              questions
+            </h1>
           </div>
 
           <div
             class="border border-gray-700 shadow-(--shadow-inset) rounded-xl p-5 md:p-8 lg:p-10 mt-10 lg:mt-0"
           >
-            <h2
-              class="font-medium   text-2xl md:text-3xl lg:text-4xl"
-            >
+            <h2 class="font-medium text-2xl md:text-3xl lg:text-4xl">
               Still have a questions?
             </h2>
 
@@ -441,7 +433,7 @@
             </p>
 
             <button
-              class="mt-5 border border-(--text) px-5 py-2 md:py-3 text-(--text) rounded-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-violet-500 hover:to-purple-600 hover:border-transparent hover:text-(--text) shadow-(--shadow-inset)"
+              class="mt-5 border border-(--text) px-5 py-2 md:py-3 text-(--text) rounded-2xl transition-all duration-300 hover:bg-cyan-700 hover:text-(--text) shadow-(--shadow-inset)"
             >
               Send email
             </button>
@@ -461,32 +453,7 @@
                 What is Javascript?
               </h3>
               <div
-                class="icon border border-gray-500 px-4 py-3 shadow-[inset_0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
-              ></div>
-            </div>
-
-            <div
-              class="mt-3 max-h-0 overflow-hidden transition-all duration-300"
-            >
-              <h4 class="text-gray-500 text-sm md:text-base">
-                JavaScript is a programming language that allows you to create
-                interactive web pages... Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Amet odio autem fuga deserunt incidunt, sed
-                suscipit. Quia officiis rem quasi nostrum, totam blanditiis
-                itaque?
-              </h4>
-            </div>
-          </div>
-
-          <div
-            class="border border-gray-500 shadow-(--shadow-inset) p-5 md:p-6 lg:p-8 w-full rounded-xl"
-          >
-            <div class="accordion-item-header flex justify-between items-start">
-              <h3 class="text-lg md:text-xl lg:text-2xl">
-                What is Javascript?
-              </h3>
-              <div
-                class="icon border border-gray-500 px-4 py-3 shadow-[inset_0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                class="icon border border-gray-500 px-4 py-3 shadow-(--shadow-inset) flex items-center justify-center"
               ></div>
             </div>
 
@@ -529,14 +496,39 @@
           </div>
 
           <div
-            class="border border-gray-500 shadow-[inset_0_0_10px_rgba(255,255,255,0.3)] p-5 md:p-6 lg:p-8 w-full rounded-xl"
+            class="border border-gray-500 shadow-(--shadow-inset) p-5 md:p-6 lg:p-8 w-full rounded-xl"
           >
             <div class="accordion-item-header flex justify-between items-start">
               <h3 class="text-lg md:text-xl lg:text-2xl">
                 What is Javascript?
               </h3>
               <div
-                class="icon border border-gray-500 px-4 py-3 shadow-[inset_0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                class="icon border border-gray-500 px-4 py-3 shadow-(--shadow-inset) flex items-center justify-center"
+              ></div>
+            </div>
+
+            <div
+              class="mt-3 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <h4 class="text-gray-500 text-sm md:text-base">
+                JavaScript is a programming language that allows you to create
+                interactive web pages... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Amet odio autem fuga deserunt incidunt, sed
+                suscipit. Quia officiis rem quasi nostrum, totam blanditiis
+                itaque?
+              </h4>
+            </div>
+          </div>
+
+          <div
+            class="border border-gray-500 shadow-(--shadow-inset) p-5 md:p-6 lg:p-8 w-full rounded-xl"
+          >
+            <div class="accordion-item-header flex justify-between items-start">
+              <h3 class="text-lg md:text-xl lg:text-2xl">
+                What is Javascript?
+              </h3>
+              <div
+                class="icon border border-gray-500 px-4 py-3 shadow-(--shadow-inset) flex items-center justify-center"
               ></div>
             </div>
 
@@ -555,6 +547,205 @@
         </div>
       </div>
 
+      <!-- Testimonials  -->
+
+      <div
+        class="w-full min-h-screen py-20 sm:py-24 md:py-28 lg:py-32 flex flex-col items-center gap-16 sm:gap-20 md:gap-24 lg:gap-28 xl:gap-32 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-40"
+      >
+        <!-- Heading -->
+        <div class="text-center max-w-3xl">
+          <button
+            class="border px-4 sm:px-5 py-1 shadow-(--shadow-inset) rounded-full text-sm sm:text-base md:text-lg border-gray-400 text-[var(--text)]"
+          >
+            Testimonials
+          </button>
+
+          <h2
+            class="text-[var(--text)] mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight"
+          >
+            What Our Customers Say
+          </h2>
+
+          <p
+            class="text-gray-500 mt-3 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          >
+            Hear from our incredible customers who are building at lightning
+            speed.
+          </p>
+        </div>
+
+        <div class="relative w-full max-w-7xl">
+          <!-- Arrows -->
+          <button
+            id="left-arrow"
+            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-(--text) hover:bg-gray-600 backdrop-blur-md p-3 sm:p-4 rounded-full transition"
+          >
+            <i class="ri-arrow-left-line text-(--bg) text-xl sm:text-2xl"></i>
+          </button>
+
+          <button
+            id="right-arrow"
+            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-(--text) hover:bg-gray-600 backdrop-blur-md p-3 sm:p-4 rounded-full transition"
+          >
+            <i class="ri-arrow-right-line text-(--bg) text-xl sm:text-2xl"></i>
+          </button>
+
+          <!-- ✅ MULTIPLE SLIDES -->
+          <div
+            id="testim-content"
+            class="relative w-full flex items-center justify-center"
+          >
+            <!-- Slide 1 -->
+            <div class="slide">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-1.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem N. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus, nihil!.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide hidden">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-2.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem O. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Another testimonial content goes here Lorem, ipsum dolor sit
+                  amet consectetur adipisicing elit. Enim, mollitia!.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide hidden">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-3.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem P. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Smooth and clean testimonial slider UI Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Nesciunt, laboriosam..
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide hidden">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-4.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem P. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Smooth and clean testimonial slider UI Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Suscipit, exercitationem!.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide hidden">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-5.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem P. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Smooth and clean testimonial slider UI Lorem ipsum dolor sit,
+                  amet consectetur adipisicing elit. Expedita, accusamus..
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide hidden">
+              <div class="flex flex-col items-center text-center gap-6">
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border border-white/20"
+                >
+                  <img
+                    src="./assets/testim-6.jpg"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h2 class="text-(--text) text-2xl font-semibold">
+                  Lorem P. Ipsum
+                </h2>
+                <p class="text-gray-500 max-w-xl">
+                  Smooth and clean testimonial slider UI Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Dignissimos,
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div id="dots" class="flex items-center justify-center gap-3 mt-8">
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-(--bg) cursor-pointer"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-(--bg)/30 cursor-pointer"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-white/30 cursor-pointer"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-white/30 cursor-pointer"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-white/30 cursor-pointer"
+            ></div>
+            <div
+              class="dot w-3 h-3 rounded-full border border-gray-500 bg-white/30 cursor-pointer"
+            ></div>
+          </div>
+        </div>
+      </div>
       <!-- Footer  -->
 
       <div
@@ -562,47 +753,47 @@
       >
         <!-- Top Bar -->
         <div
-          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-10 border-b border-gray-400"
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-10 border-b border-(--text)"
         >
           <img src="" alt="" class="w-32" />
-          <h3 class="text-base sm:text-lg md:text-xl text-gray-300">
+          <h3 class="text-base sm:text-lg md:text-xl text-gray-600 font-medium">
             Smarter collaboration, less effort.
           </h3>
         </div>
 
         <!-- Middle Section -->
         <div
-          class="flex flex-col lg:flex-row gap-10 justify-between border-b border-gray-400 py-10"
+          class="flex flex-col lg:flex-row gap-10 justify-between border-b border-gray-600 py-10"
         >
           <!-- Links -->
           <div
             class="flex flex-col sm:flex-row flex-wrap gap-10 sm:gap-16 md:gap-20"
           >
             <!-- Product -->
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 font-medium">
               <h2 class="text-lg md:text-xl font-medium">Product</h2>
-              <h4 class="text-sm md:text-lg text-gray-300">Our Products</h4>
-              <h4 class="text-sm md:text-lg text-gray-300">
+              <h4 class="text-sm md:text-lg text-gray-600">Our Products</h4>
+              <h4 class="text-sm md:text-lg text-gray-600">
                 Caelor for Confluence
               </h4>
-              <h4 class="text-sm md:text-lg text-gray-300">Caelor for Jira</h4>
+              <h4 class="text-sm md:text-lg text-gray-600">Caelor for Jira</h4>
             </div>
 
             <!-- Company -->
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 font-medium">
               <h2 class="text-lg md:text-xl font-medium">Company</h2>
-              <h4 class="text-sm md:text-lg text-gray-300">About Us</h4>
-              <h4 class="text-sm md:text-lg text-gray-300">Blog</h4>
+              <h4 class="text-sm md:text-lg text-gray-600">About Us</h4>
+              <h4 class="text-sm md:text-lg text-gray-600">Blog</h4>
             </div>
 
             <!-- Contact -->
-            <div class="flex flex-col gap-3 max-w-xs">
+            <div class="flex flex-col gap-3 max-w-xs font-medium">
               <h2 class="text-lg md:text-xl font-medium">Contact</h2>
-              <h4 class="text-sm md:text-lg text-gray-300">
+              <h4 class="text-sm md:text-lg text-gray-600">
                 Matrix Office Park, Slavonska avenjia 1c <br />
                 Zagreb 100000, Croatia(Hrvatska)
               </h4>
-              <h4 class="text-sm md:text-lg text-gray-300">
+              <h4 class="text-sm md:text-lg text-gray-600">
                 marketplace@caelor.com
               </h4>
             </div>
@@ -612,16 +803,32 @@
           <div class="flex flex-col items-start lg:items-start gap-6">
             <!-- Icons -->
             <div class="flex gap-4 flex-wrap">
-              <div class="p-6 bg-gray-500/20 rounded-full"></div>
-              <div class="p-6 bg-gray-500/20 rounded-full"></div>
-              <div class="p-6 bg-gray-500/20 rounded-full"></div>
-              <div class="p-6 bg-gray-500/20 rounded-full"></div>
+              <div
+                class="h-14 w-14 flex items-center justify-center bg-gray-600/20 rounded-full"
+              >
+                <i class="ri-arrow-up-line text-2xl text-(--text)"></i>
+              </div>
+              <div
+                class="h-14 w-14 flex items-center justify-center bg-gray-600/20 rounded-full"
+              >
+                <i class="ri-facebook-circle-line text-2xl text-(--text)"></i>
+              </div>
+              <div
+                class="h-14 w-14 flex items-center justify-center bg-gray-600/20 rounded-full"
+              >
+                <i class="ri-linkedin-box-line text-2xl text-(--text)"></i>
+              </div>
+              <div
+                class="h-14 w-14 flex items-center justify-center bg-gray-600/20 rounded-full"
+              >
+                <i class="ri-twitter-line text-2xl text-(--text)"></i>
+              </div>
             </div>
 
             <!-- Badge -->
             <div class="">
               <h2
-                class="text-sm md:text-base font-medium text-gray-400 border-l border-gray-400 pl-3"
+                class="text-sm md:text-xl font-medium text-gray-700 border-l border-gray-600 pl-3"
               >
                 Platinum <br />
                 Marketplace Partner
@@ -634,10 +841,10 @@
         <div
           class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-10"
         >
-          <h3 class="text-sm md:text-base text-gray-500 font-medium">
+          <h3 class="text-sm md:text-base text-gray-600 font-medium">
             All rights reserved 2026 @ Caelor Group d.o.o
           </h3>
-          <h4 class="text-sm md:text-base text-gray-500 font-medium">
+          <h4 class="text-sm md:text-base text-gray-600 font-medium">
             Privacy Policy <span class="ml-4">EULA</span>
           </h4>
         </div>

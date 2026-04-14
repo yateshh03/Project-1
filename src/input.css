@@ -17,7 +17,10 @@
   --box-color: #007595;
   --shadow-inset: inset 0 0 30px rgba(255, 255, 255, 0.3);
   --text-gradient: linear-gradient(to bottom right, #ffffff, #8e9197);
+
 }
+
+
 
 *{
   transition: all 0.3s ease;
@@ -47,7 +50,7 @@
   position: absolute;
   width: 14px;
   height: 2px;
-  background-color: white;
+  background-color: rgb(104, 101, 101) ;
   border-radius: 20px;
   pointer-events: all;
   transition: all 0.3s ease-in-out;
@@ -58,7 +61,7 @@
   position: absolute;
   width: 2px;
   height: 14px;
-  background-color: white;
+  background-color: rgb(104, 101, 101);
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
@@ -72,3 +75,7 @@
 .accordion-item-header.active .icon:after {
   transform: rotate(90deg);
 }
+
+
+
+
