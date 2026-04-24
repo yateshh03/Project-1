@@ -7,7 +7,7 @@ This project supports both **Dark Mode 🌙** and **Light Mode ☀️**, ensurin
 
 🔗 Live Demo
 
-👉 [Live Link](https://srclogo.netlify.app/)
+👉 [Live Link](https://srclogc.vercel.app/))
 
 ---
 
